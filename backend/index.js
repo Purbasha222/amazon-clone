@@ -8,7 +8,12 @@ app.use(express.json());
 
 const userRoutes = require("./routes/backendRoutes.js");
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://amazon-clone2004.netlify.app",
+    credentials: true,
+  })
+);
 app.use("/api/user", userRoutes);
 
 mongoose
