@@ -64,7 +64,7 @@ signUp.addEventListener("click", async () => {
   }
 
   try {
-    const res = await fetch("http://localhost:3000/api/user", {
+    const res = await fetch("https://amazon-clone-mj7w.onrender.com/api/user", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -119,13 +119,16 @@ logIn.addEventListener("click", async () => {
   }
 
   try {
-    const res = await fetch(`http://localhost:3000/api/user/login`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ userName, userEmail, password: userPassword }),
-    });
+    const res = await fetch(
+      `https://amazon-clone-mj7w.onrender.com/api/user/login`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ userName, userEmail, password: userPassword }),
+      }
+    );
 
     if (!res.ok) {
       showToast("Invalid credentials!");
